@@ -1,0 +1,20 @@
+# Maven
+
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: HCLAppScanOnCloud@2
+  inputs:
+    AppSecTestService: 'ASoC Connection'
+    applications: 'af6686e8-d107-49e7-bfda-092220d47af7'
+    scanname: 'SAST_IGW_Java'
+    scantype: 'static'
+    scanMethod: 'IRX'
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
